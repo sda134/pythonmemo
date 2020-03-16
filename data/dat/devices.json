@@ -1,0 +1,12 @@
+[
+  {
+    "Comment": null,
+    "DeviceName": "D100",
+    "Type": "Signed16"
+  },
+  {
+    "Comment": "あああ",
+    "DeviceName": "D102",
+    "Type": "Signed16"
+  }
+]

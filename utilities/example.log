@@ -1,0 +1,3 @@
+2019-09-10 16:39:28,901 logger_sample WARNING  logger             <module>    103: warn message
+2019-09-10 16:39:28,902 logger_sample ERROR    logger             <module>    104: error message
+2019-09-10 16:39:28,903 logger_sample CRITICAL logger             <module>    105: critical message
