@@ -11,18 +11,24 @@ l1 = range(3) # 注意 0-2 となる
 for r in l1:
     print(r)
 
-
 l2 = list(frange(0.1,10.1,0.1)) # step幅を指定したlistを作成 ⇒ 0,2,4,6,8
+print('- ' *30)
+
 
 # 二重ループ
+print('二重ループ') 
 for i in range(3):
     if i==2:
-        break          # ループを抜ける
+        break               # ループを抜ける        
     for j in l2:
-        if j==3:
-            continue   # 処理をせず次のループへ
-        else:
+        if j < 2:
             print(i, j)
+            continue        # 処理をせず次のループへ
+else:
+    print(i)                # for に付くelse   breakじゃなかった時に実行される
+
+
+print('- ' *30)
 
 # while
 i = 0

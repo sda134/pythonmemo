@@ -16,3 +16,14 @@ odd_even = ['odd' if i % 2 == 1 else 'even' for i in range(10)]
 # 一方は変数、一方はlist として宣言する
 a1, *b2 = 100, 200, 300     # 左辺、右辺の数があっていない時は
 *a2, b2 = 100, 200, 300     # *がある変数に list として代入される  *が無ければエラーとなる
+
+
+from typing import (TypeVar, Sequence)
+
+# Generics
+T = TypeVar('T')  # Can be anything
+def repeat(x: T, n: int) -> Sequence[T]:
+    return [x]*n
+
+print(repeat(str,3))
+print('hoge')

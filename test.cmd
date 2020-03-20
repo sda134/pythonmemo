@@ -1,9 +1,13 @@
 ::コマンドを非表示
 @echo off
 
-python %~dp0\Basic\basic.py hogehoge
+:: module名（ファイルフルパス）を指定して、引数付きで実行
+python %~dp0\basic\basic.py hogehoge
 
 
-python -m Structured
+echo ""
+
+:: パッケージとして実行
+python -m structured
 
 ::pause

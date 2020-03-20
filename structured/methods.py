@@ -1,7 +1,7 @@
 ﻿#!/usr/bin/env python
 #coding: UTF-8
 
-from ClassSamples import TestClass as csmp   # 自作モジュールの import (同じフォルダにある場合)
+from class_samples import TestClass as csmp   # 自作モジュールの import (同じフォルダにある場合)
 # from Children.Class import TestClass    # 一つ下のフォルダにある場合 
 
 '''
@@ -10,12 +10,21 @@ from ClassSamples import TestClass as csmp   # 自作モジュールの import (
 '''
 
 
-with TestClass() as ts:
+with csmp() as ts:
     ts.PublicPrint('hoge')
 
 # 引数の型指定　※但しこれは使う人への情報以上の意味は無い
 def Greeting(arg :str) -> str:
+    '''
+    saying hello\n
+    doc string マウスでホバーさせた時や，__doc__で表示できる。
+    '''
     return "Hello! :%s" % arg
+print('Greeting.__doc__:%s' % Greeting.__doc__)                 #
+print('Greeting.__annotations__:%s' % Greeting.__annotations__) # 
+print('Greeting.__module__:%s' % Greeting.__module__)           # class method なら class 名。それ以外の間合いは __main__ が返る
+print('-' * 30 + '\n')
+
 
 def DefaultArg(arg='hoge'):
     print("Method:DefaulutArg %s" % arg)

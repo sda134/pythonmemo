@@ -7,7 +7,9 @@
 """
 doctext
 クラスの説明をここに書く
+参考資料：https://docs.python.org/ja/3.6/reference/datamodel.html#index-34
 """
+
 class TestClass():
     def __init__(self, arg1=0):     # コンストラクタ ※デフォルト値を持っているのでオーバーロードのように扱える
         print('initialiser invoked!') # __init__ だからか、initializer と呼ぶ人もいる。
@@ -33,10 +35,10 @@ class TestClass():
         print('this is static method!')# インスタンスを使用しない（使用できない）メソッド
 
     @property                       # プロパティ get
-    def Comment(self):
+    def comment(self):
         return self.__comment
-    @Comment.setter                 # プロパティ set
-    def name(self, arg):    
+    @comment.setter                 # プロパティ set
+    def comment(self, arg):    
         self.__comment = arg
 
     def __privatePrint(self): # プライベートメソッド __で始まる    
@@ -57,26 +59,41 @@ class TestClass():
     def __hash__ (self):                        # Hash値を返す。オブジェクトを示す、唯一無二、一意な値。
         return 0
 
+    def __dir__(self):
+        print('__dir__ is called!!')            # 本インスタンスに対して dir()  された時に呼び出される
+
+
     def __bytes__(self):                        # 文字通り。バイナリのバイトデータを返す。
         return bytearray([0x00, 0x00])
 
     def __format__(self, format_spec):          # format_spec に準じた文字列　？？__str__とどう違う？
-        return self.str
+        return self.__str__
     
     def __bool__(self):                         # 使う機会があるのだろうか？
         return True
 
+
     def __enter__(self):                        # with 用：使用時によびだされる
         print("for with - enter")
-        return self
-    
+        return self    
     def __exit__(self, type, value, traceback):# with 用：終了時によびだされる
         print("for with - exit")
 
-    def __iter__(self):             # イテレータ forループなどで使う　C#などのコレクションで使用？
-        return iter(['iter1','iter2'])
 
-    def __add__(self, other):          # + で足し算する時のメソッド　operator+ みたいな
+    def __iter__(self):                         # イテレータ forループなどで使う　C#などのコレクションで使用？
+        return iter(['iter1','iter2'])
+    def __next__(self):                         # __iter__と共に使う。
+        return None
+
+    def __call__(self):
+        print('did someone call me?')           # 本クラスをメソッドのように呼び出した時に実行される。利用価値ある？
+
+    def __add__(self, other):                   # + で足し算する時のメソッド　operator+ みたいな
+        pass
+    def __setattr__(self, name, value):         # = が使われた時に呼び出される。operator= みたいな
+        self.__dict__[name] = value
+        pass
+    def __getattr__(self, value):               # __setattr__ のget版
         pass
 
 
@@ -94,6 +111,7 @@ def say_hello():
 
 # ------ 以下、検証
 ts = TestClass()
+ts.comment = 'hogegehogege'
 print(ts.StringMethod())
 TestClass.StaticMethod()     # static method の実行
 hoge =TestClass.ClassMethod()

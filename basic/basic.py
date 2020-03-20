@@ -1,6 +1,8 @@
 ﻿#!/usr/bin/env python
 #coding: UTF-8
 
+from ..structured import class_samples
+
 
 # コード改行    \ を使う
 return_of_long_line = 1 + 2 + 3 + \
@@ -16,7 +18,7 @@ import sys
 args = sys.argv          # 引数の一つ目 arg[0] は python 実行時の第一引数、つまり本ファイルのパスになるらしい
 
 if __name__ == "__main__":                      # 外から呼び出された場合、 __name__ は　'__main__' になる
-    print('executed from outside!')
+    print('basic.py : executed from outside!')
     print('length of args: %s' % len(args))
     for a in args:
         print('item: %s' % a)

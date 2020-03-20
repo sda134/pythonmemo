@@ -4,7 +4,6 @@
 # https://docs.python.org/ja/3/library/exceptions.html
 
 
-
 try:
     print(1/0)
 except ZeroDivisionError as e:
@@ -14,6 +13,9 @@ except Exception as e:
 else:
     pass                       # 例外が発生しなかった場合
 finally:
+    # finally で return, break, continue を使わない事！
+    #
+    #
     pass                       # 例外が発生しようがしまいが実行される
 
 # 例外を発生させる

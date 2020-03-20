@@ -6,8 +6,8 @@
 # 
 # (python3からは、module化する際に __init__.pyファイルは必須ではなくなった)
 
-from . import class_samples             # パッケージとして呼び出される場合、 . で自身の
-from . import enum_samples              # .. で親パッケージを相対的に参照できる
+from . import class_samples             # . で自身のファイルと同じディレクトリにあるファイルに
+from . import enum_samples              # .. で親パッケージ？（ディレクトリだと思うが）を相対的に参照できる
 
 __all__ = ['say_hi', 'say_hello']       # from my_package import * でimport される時の対象メンバ。 
                                         # 但し、import * は非推奨なので、書く機会は少ないと思われる

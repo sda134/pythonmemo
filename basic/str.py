@@ -14,6 +14,14 @@ print('len：文字列長さ%s' % len(word))
 # 空白、文字列の削除
 hoge = word.strip('p') # lstrip 左（文字列先頭）から削除
 print(hoge)            # rstrip 右（文字列最後）から削除
+print('- ' * 10 + '\n')
+
+
+# 文字列の検索
+index = word.find('t')      # 見つかったらその場所，なかったら -1 が返る
+if 't' in word:             # True False（見つかったかどうか）のみ
+    print('あるよ')
+print('- ' * 10 + '\n')
 
 
 # 定義済関数
@@ -56,11 +64,13 @@ print('- ' * 10)
 
 print('a\tb\nA\tB')       # r なしで出力　結果：\t はタブ文字として認識されてしまう
 print(r'a\tb\nA\tB')      # raw 文字列　C#の @ と同じ。エスケープ文字を無視する
-
+print('￥：\\')               # エスケープ文字一覧
 
 # ascii コード
 print('ascii of [a] :%s' % ord("a"))  # アスキーコードを示す int を返す
 print('ascii of [あ] :%s' % ord(u"あ"))  # 2byte 文字（uft-8) の場合
+
+
 
 
 # 終了
