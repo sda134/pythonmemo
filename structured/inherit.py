@@ -23,6 +23,7 @@ class BaseTestClass():    #基底クラス（親クラス，スーパークラ�
 
 class InheritTestClass(BaseTestClass): # 継承クラス（子クラス，サブクラス）
     def __init__(self, int_val, str_val):
+        super().__init__(int_val, str_val)  # スーパークラスのinitialiser を呼び忘れないように
         self.__int_member = int_val
         self.__str_val = 'super!'           # これは本クラスの値を変更するだけ
         self.title = 'super title!'         # これは基底クラスの値も変更する

@@ -24,6 +24,7 @@ class TestClass():
     def ClassMethod(cls):              # static method のようにインスタンス化しなくても使える
         print('this is class method!')  # 第一引数は、本クラスのインスタンス。慣例としてclsとするが、名前は自由。
         return cls                      # インスタンスの使える静的メソッド、といった所
+    
 
     def sample_method(cls):          # あまり使わない方が良いらしいが、
         return cls                    # こういった方法もある
@@ -41,8 +42,15 @@ class TestClass():
     def comment(self, arg):    
         self.__comment = arg
 
-    def __privatePrint(self): # プライベートメソッド __で始まる    
-        print("This is Private Method!")
+    def __privatePrint(self):       # 疑似 private    
+        print('this is supposed to be private...')  # hoge._ClassName__methodname() でアクセスできてしまう（非推奨）
+
+    @classmethod
+    def __private_class_method(cls):                # python に完全なprivate は存在しない。
+        print('this is supposed to be private...')  # hoge._ClassName__methodname() でアクセスできてしまう（非推奨）
+        return cls
+
+
 
     def PublicPrint(self, arg :str): # パブリックメソッド（＋引数のヒント　注意！型指定ではない）
         if not isinstance(arg, str):
@@ -115,6 +123,14 @@ ts.comment = 'hogegehogege'
 print(ts.StringMethod())
 TestClass.StaticMethod()     # static method の実行
 hoge =TestClass.ClassMethod()
+print('\n' + '-' * 30)
+
+
+print('excute of private method')       # python にはprivate の概念がない
+ts._TestClass__privatePrint()           # このようにすると実行できてしまう（非推奨）
+ts._TestClass__private_class_method()   # class method 版
+print('\n' + '-' * 30)                  
+
 
 # イテレータの検証
 for iterItem in ts:

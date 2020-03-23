@@ -25,7 +25,7 @@ for i in range(3):
             print(i, j)
             continue        # 処理をせず次のループへ
 else:
-    print(i)                # for に付くelse   breakじゃなかった時に実行される
+    print(i)                # for に付くelse：breakしなかった時に実行される
 
 
 print('- ' *30)

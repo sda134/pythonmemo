@@ -117,5 +117,10 @@ print('type(1):\t%s\n' % type(1))     #
 
 
 print('vars　')
-print('zip　')
+print('zip　list要素数を最小のものに合わせる')
+names = ['taro', 'hanako', 'jiro']
+ages = [25, 30]
+for name, age in zip(names, ages):              #
+    print('name:%s    age:%s' % (name, age))    # jiro がプリントされない事に注目
+
 
