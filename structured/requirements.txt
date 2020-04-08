@@ -1,0 +1,11 @@
+# pypiに存在するパッケージ名
+numpy
+
+# バージョン指定したいときは等式を使う
+scipy == 1.2.2
+
+# pypiに存在しないパッケージの時は git://リポジトリのURL.git
+git://git@github.com/foo/foo.git
+
+# プライベートリポジトリの場合は+sshをつける
+git+ssh://git@github.com/foo/foo.git

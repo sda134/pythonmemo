@@ -12,9 +12,9 @@ doctext
 
 class TestClass():
     def __init__(self, arg1=0):     # コンストラクタ ※デフォルト値を持っているのでオーバーロードのように扱える
-        print('initialiser invoked!') # __init__ だからか、initializer と呼ぶ人もいる。
-        self.__value = 1            # これでもメンバが生成される(private)
-        self.Field = "PublicField"  # これでもメンバが生成される(public)
+        print('initialiser invoked!') # __init__ だからか、initializer と呼ぶ方がpythonらしい
+        self.__value = 1            # これでもメンバが生成される non public ≒ private
+        self.Field = "PublicField"  # これでもメンバが生成される public
                                     # 基本的には init のオーバーロードは不可。継承などで対応する。
 
     def __del__(self):              #デストラクタ
