@@ -8,8 +8,8 @@
 # C言語系の void main(int argc, char *argv[] ){} みたいにエントリポイントとして使い、
 # c++ の.h(ヘッダー) の様にメインメソッド群を見通し良く記述すると良い様に思う 20.03.25
 
-print("mypackage__main__.py is loaded!")
+print("mypackage__main__.py is loaded! from __main__.py")
 
 class MyClass():
     def say_myname(self):
-        print('MyClass!!')
+        print('say_myname:MyClass!!')

@@ -2,7 +2,7 @@
 #coding: UTF-8
 
 import csv
-with open('csv_test.csv', 'w') as f:    # with：C# で言うところの using
+with open('csv_test.csv', 'w', encoding='utf-8') as f:    # with：C# で言うところの using
     writer = csv.writer(f, lineterminator='\n') # 改行コード（\n）を指定しておく
     writer.writerow([1,'スパム','500円'])
     writer.writerow([2,'卵','168円'])

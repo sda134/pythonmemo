@@ -12,7 +12,7 @@ from . import class_samples             # . で自身のファイルと同じデ
 from . import enum_samples              # .. で親パッケージ？（ディレクトリだと思うが）を相対的に参照できる
 from mypackage.__main__ import MyClass
 
-print("mypackage__main__.py is loaded!")
+print("mypackage__main__.py is loaded! from __init__.py")
 
 def say_hi():
     print('hi!')

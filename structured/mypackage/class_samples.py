@@ -10,29 +10,29 @@ doctext
 参考資料：https://docs.python.org/ja/3.6/reference/datamodel.html#index-34
 """
 
-class TestClass():
+class TestClass():                  # クラス名は camel case とする
     def __init__(self, arg1=0):     # コンストラクタ ※デフォルト値を持っているのでオーバーロードのように扱える
-        print('initialiser invoked!') # __init__ だからか、initializer と呼ぶ方がpythonらしい
-        self.__value = 1            # これでもメンバが生成される non public ≒ private
-        self.Field = "PublicField"  # これでもメンバが生成される public
+        print('initialiser invoked!') # __init__ だからか、pythonでは initializer と呼ぶ
+        self._value = 1             # これでもメンバが生成される non public ≒ private
+        self.field = "PublicField"  # これでもメンバが生成される public
                                     # 基本的には init のオーバーロードは不可。継承などで対応する。
 
     def __del__(self):              #デストラクタ
         print('destructor invoked!')
 
     @classmethod
-    def ClassMethod(cls):              # static method のようにインスタンス化しなくても使える
+    def class_method(cls):              # static method のようにインスタンス化しなくても使えるメソッド
         print('this is class method!')  # 第一引数は、本クラスのインスタンス。慣例としてclsとするが、名前は自由。
         return cls                      # インスタンスの使える静的メソッド、といった所
     
 
-    def sample_method(cls):          # あまり使わない方が良いらしいが、
-        return cls                    # こういった方法もある
+    def sample_method(cls):             # あまり使わない方が良いらしいが、
+        return cls                      # こういった方法もある
     sample_method = classmethod(sample_method)
 
 
     @staticmethod
-    def StaticMethod():                # static method 
+    def static_method():                # static method 
         print('this is static method!')# インスタンスを使用しない（使用できない）メソッド
 
     @property                       # プロパティ get
@@ -42,20 +42,23 @@ class TestClass():
     def comment(self, arg):    
         self.__comment = arg
 
-    def __privatePrint(self):       # 疑似 private    
-        print('this is supposed to be private...')  # hoge._ClassName__methodname() でアクセスできてしまう（非推奨）
+    def public_method(self, arg :str)-> str:        # パブリックメソッド（＋引数のヒント　注意！型指定ではない）
+        if not isinstance(arg, str):                # -> は戻り値のヒント　注意！型指定ではない！
+            raise ValueError('the arg must be str') # 確実に str型が欲しいならこのようにするしかない。
+        return "This is Public Method! arg:%s" % arg
+
+    def _private_method(self):      # アンダースコア２つはマングリングとよばれ，疑似 private化，名前重複を避ける　などの目的で使う。    
+        print('this is supposed to be private...')  # hoge._ClassName__methodname() でアクセスできる（非推奨）
+
+    def __mungled_method(self):      # アンダースコア２つはマングリングとよばれ，疑似 private化，名前重複を避ける　などの目的で使う。    
+        print('this is mungled method...')  # hoge._ClassName__methodname() でアクセスできる（非推奨）
 
     @classmethod
-    def __private_class_method(cls):                # python に完全なprivate は存在しない。
-        print('this is supposed to be private...')  # hoge._ClassName__methodname() でアクセスできてしまう（非推奨）
+    def __mungled_class_method(cls):                # マングリング化されたclass method
+        print('this is mungled class method...')  # 
         return cls
 
 
-
-    def PublicPrint(self, arg :str): # パブリックメソッド（＋引数のヒント　注意！型指定ではない）
-        if not isinstance(arg, str):
-            raise ValueError('the arg must be str') # 確実に str型が欲しいならこのようにするしかない。
-        return "This is Public Method! arg:%s" % arg
 
     # --- 特殊メソッド --- 
     def __str__(self):                          # toString() の様な物。printなどで文字列に変換する場合に呼び出される。
@@ -108,7 +111,7 @@ class TestClass():
     """
     メソッドの説明をここに書く
     """
-    def StringMethod(self) -> str:   # 戻り値の型ヒント　注意！型指定ではない
+    def string_method(self) -> str:   # 戻り値の型ヒント　注意！型指定ではない
         return "string method!"
 
 
@@ -116,25 +119,3 @@ def say_hello():
     print('hello from class_samples')
 
 
-
-# ------ 以下、検証
-ts = TestClass()
-ts.comment = 'hogegehogege'
-print(ts.StringMethod())
-TestClass.StaticMethod()     # static method の実行
-hoge =TestClass.ClassMethod()
-print('\n' + '-' * 30)
-
-
-print('excute of private method')       # python にはprivate の概念がない
-ts._TestClass__privatePrint()           # このようにすると実行できてしまう（非推奨）
-ts._TestClass__private_class_method()   # class method 版
-print('\n' + '-' * 30)                  
-
-
-# イテレータの検証
-for iterItem in ts:
-    print('iter item: %s' % iterItem)
-
-print(type(ts))                  # 型の情報を表示
-print(isinstance(ts, TestClass)) # 型の確認方法

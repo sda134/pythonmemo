@@ -53,7 +53,7 @@ score = 52.8
 
 print('要素数は{}です'.format(count)) 
 print('2番目は{0[0]}, 3番目は{0[2]}です'.format(list_test))  # 一行が長くなるので、この方法は避ける 
-print("name: %s, score: %f" % (name, score))                # 多分これが一番メンテナンス性が良い
+print("name: %s, score: %.2f" % (name, score))              # 多分これが一番メンテナンス性が良い 3.4f 整数3桁小数点4桁のfloat
 print(f'using[f] - name:{name} score:{score:.3f}')          # 個々に桁数指定などをしたい場合はこれが良い？20.02.14
 print('- ' * 10)
 
@@ -69,7 +69,6 @@ print('￥：\\')               # エスケープ文字一覧
 # ascii コード
 print('ascii of [a] :%s' % ord("a"))  # アスキーコードを示す int を返す
 print('ascii of [あ] :%s' % ord(u"あ"))  # 2byte 文字（uft-8) の場合
-
 
 
 

@@ -15,9 +15,9 @@ class Color(IntEnum):
 
 
 class Color(Enum):
-    RED = 1
-    GREEN = 2
-    BLUE = 3
+    SLEEP = 0b00
+    FORCED = 0b01   # or 0b10
+    NORMAL = 0b11
 
 clr = Color.RED
 print('完全なenum 名 が欲しい時: %s' % clr)
