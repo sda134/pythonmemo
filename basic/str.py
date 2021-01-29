@@ -18,9 +18,17 @@ print('- ' * 10 + '\n')
 
 
 # 文字列の検索
-index = word.find('t')      # 見つかったらその場所，なかったら -1 が返る
+
+# 注意！rfindは後ろ側の文字が優先されるだけで，index値はfindと変わらない
+print('find: %s\trfind:%s' % \
+    (word.find('y'), word.rfind('y')))
+
 if 't' in word:             # True False（見つかったかどうか）のみ
     print('あるよ')
+
+print('startwith: %s' % 'hoge'.startswith('ho'))
+print('endwith: %s' % 'hoge'.endswith('ho'))
+
 print('- ' * 10 + '\n')
 
 
@@ -71,6 +79,11 @@ print('ascii of [a] :%s' % ord("a"))  # アスキーコードを示す int を�
 print('ascii of [あ] :%s' % ord(u"あ"))  # 2byte 文字（uft-8) の場合
 
 
+# 正規表現を使った検索
+import re
+re_text = "123abc456def789"
+print('re.search:%s\n' %\
+    re.search(r"[a-z]+", re_text))
 
 # 終了
 ret =input('何かキーを押してください')

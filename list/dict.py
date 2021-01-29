@@ -13,8 +13,14 @@ my_dict.update(other_dict)              # update 複合的なdict の更新
 print('\n' + '-' * 30)
 
 
-if('key5' not in my_dict):            # key in dict / key not in dict
-    print('key5 does exist.')
+
+# 基本メソッド類
+print('key5 not in mydict:%s' % ('key5' not in my_dict))        # key in dict / key not in dict
+print('foo in mydict.values():%s' % ('foo' in my_dict.values()))# in values
+
+for key, value in my_dict.items():                             # key と values に同時アクセス
+    print('key:%s\tvalue:%s' % (key, value))
+
 print('\n' + '-' * 30)
 
 print('keys()')

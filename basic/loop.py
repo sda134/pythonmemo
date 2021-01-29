@@ -27,7 +27,6 @@ for i in range(3):
 else:
     print(i)                # for に付くelse：breakしなかった時に実行される
 
-
 print('- ' *30)
 
 # while
@@ -40,6 +39,7 @@ while i < 3:
 for i, v in enumerate(['tic','tac','tor']):
     print(i,v)
 
+print('- ' *30)
 
 
 
@@ -52,3 +52,13 @@ class Color(IntEnum):
 # enum のループ
 for col in Color:
     print(col)
+
+print('- ' *30)
+
+
+# ループ内加工
+print('all exponential:%s\n' %\
+    [i**2 for i in range(-10,10))   # 処理を施した新しいリストの作成
+
+
+
