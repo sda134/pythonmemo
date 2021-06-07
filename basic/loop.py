@@ -35,6 +35,19 @@ while i < 3:
     print(i)
     i += 1
 
+import time
+print('press Ctrl+C to break')
+while i < 10:
+    try:
+        print(i)
+        i += 1
+        time.sleep(5)
+    except KeyboardInterrupt:
+        break
+print('- ' *30)
+
+
+
 # index 付きlist (dict?) enumerate　※最後の: を忘れないように
 for i, v in enumerate(['tic','tac','tor']):
     print(i,v)
@@ -58,7 +71,4 @@ print('- ' *30)
 
 # ループ内加工
 print('all exponential:%s\n' %\
-    [i**2 for i in range(-10,10))   # 処理を施した新しいリストの作成
-
-
-
+    [i**2 for i in range(-10,10)])   # 処理を施した新しいリストの作成

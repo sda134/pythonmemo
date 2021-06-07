@@ -3,13 +3,15 @@
 
 import socket
 
-host = '10.4.1.112'
+host = '192.168.1.30'
 port = 6002
-sndData = bytearray([0x30,0x30,0x30,0x30])
+#snd_data = bytearray([0x30,0x30,0x30,0x30])
+snd_data = "hello world".encode()
+#snd_data = bytearray("あいうえお".encode())
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 soc.connect((host,port))
-soc.sendall(sndData)
-rcvData = soc.recv(1024)
-print('Received', repr(rcvData))
-
+soc.sendall(snd_data)
+rcv_data = soc.recv(1024)
+print('Received', repr(rcv_data))
+soc.close()

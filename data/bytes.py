@@ -3,8 +3,13 @@
 
 # byte関連
 
-byte_array1 = b'\x02\x1f\xa0'   # 単純にバイト配列を作成する
-byte_array2 = b"zbc"            # 文字列からバイト配列を作成?? 20.03.04
+byte_array1 = b'\x02\x1f\xa0'                       # 単純にバイト配列を作成する
+byte_array_str1 = b"zbc"                            # 文字列からバイト配列を作成　方法1
+byte_array_str2 = "hello world".encode()            # 方法2
+byte_array_str2 = bytearray("あいうえお".encode())  # 方法3 ASCII 文字以外
+
+snd_data = "hello world".encode()
+#snd_data = bytearray("あいうえお".encode())
 
 import binascii
 hexStr = str(binascii.hexlify(byte_array1), 'utf-8') # 文字列に変換する
