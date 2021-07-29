@@ -25,5 +25,9 @@ bytes_from_int = iVal.to_bytes(2,'big')     # を超えると例外発生
 print(repr(bytes_from_int))
 print('int value from bytes:%s' % int.from_bytes(bytes_from_int, 'big'))
 
+# 二進数文字列にする関数
+def bytes_to_bin(bytes):
+  return [bin(b) for b in bytes]
+
 # 関連する組み込み関数
 print('bytearray([1,255,50,2]):\t\t%s' % bytearray([1,255,50,2]))
