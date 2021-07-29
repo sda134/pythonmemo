@@ -34,7 +34,7 @@ print('- ' * 10 + '\n')
 
 # リストの要素すべてに処理
 print('even only:%s\n' %\
-    [i for i in range(-10,10) if i % 2 == 0])   # 条件付きで新しいリストを作成
+    [i for i in range(-10,10) if i % 2 == 0])   # 条件付きで新しいリストを作成 　※[]で閉じる必要がある　[ 処理 for arg in list]
 print('all exponential:%s\n' %\
     [i**2 for i in range(-10,10)])  # 処理を施した新しいリストの作成
     
