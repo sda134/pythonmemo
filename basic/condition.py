@@ -4,9 +4,9 @@
 num =int(input('数値を入力してください'))
 
 # 条件分岐：基礎
-if num > 100:
+if num > 100:                   # 追加条件は and または or で追加
     print('more than 100')    
-elif num == 50:                  # C#などと同じく等価は ==
+elif num == 50:                 # C#などと同じく等価は ==
     print('the value is 50')    
 elif num > 50:
     print('more than 50, less than 100')
