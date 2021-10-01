@@ -47,5 +47,5 @@ items_rev = list(reversed(items))
 items_sort_rev = sorted(items, reverse = True)
 items_0to5 = range(5)
 
-test = 1
+del items_rev[1]                # 要素の２番目を削除
 
