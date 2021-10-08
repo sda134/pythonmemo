@@ -43,7 +43,7 @@ try:
         i += 1
         time.sleep(1)
 except KeyboardInterrupt:
-    break
+    pass
 
 print('- ' *30)
 
