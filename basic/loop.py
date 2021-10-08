@@ -37,14 +37,16 @@ while i < 3:
 
 import time
 print('press Ctrl+C to break')
-while i < 10:
-    try:
+try:
+    while i < 15:
         print(i)
         i += 1
-        time.sleep(5)
-    except KeyboardInterrupt:
-        break
+        time.sleep(1)
+except KeyboardInterrupt:
+    break
+
 print('- ' *30)
+
 
 
 
