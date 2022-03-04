@@ -7,7 +7,7 @@ def frange(st, ed, step):
     st += step
 
 
-l1 = range(3) # 注意 0-2 となる
+l1 = range(3)                   # 注意 0-2 となる
 for r in l1:
     print(r)
 
@@ -54,10 +54,21 @@ print('- ' *30)
 for i, v in enumerate(['tic','tac','tor']):
     print(i,v)
 
+
+# ループしながら新たにdict型を返す
+[(i, v) i, v in enumerate(['tic','tac','tor'])]
+
+
+# ループ内加工
+print('all exponential:%s\n' %\
+    [i**2 for i in range(-10,10)])   # 処理を施した新しいリストの作成
+
+
 print('- ' *30)
 
 
 
+# enum関連
 from enum import Enum, auto, IntEnum
 class Color(IntEnum):
     RED = 1,
@@ -71,6 +82,3 @@ for col in Color:
 print('- ' *30)
 
 
-# ループ内加工
-print('all exponential:%s\n' %\
-    [i**2 for i in range(-10,10)])   # 処理を施した新しいリストの作成
