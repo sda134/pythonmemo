@@ -16,8 +16,8 @@ with csmp() as ts:
 # 引数の型指定　※但しこれは使う人への情報以上の意味は無い
 def Greeting(arg :str) -> str:
     '''
-    saying hello\n
-    doc string マウスでホバーさせた時や，__doc__で表示できる。
+    メソッドでの doc string
+    （マウスでホバーさせた時に説明書きを表示）
     '''
     return "Hello! :%s" % arg
 print('Greeting.__doc__:%s' % Greeting.__doc__)                 #

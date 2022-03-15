@@ -1,5 +1,6 @@
 
 # 先に継承時の注意点！
+from abc import ABCMeta, abstractmethod
 
 class BaseTestClass():    #基底クラス（親クラス，スーパークラス）
     __str_val = 'base!'
@@ -21,13 +22,23 @@ class BaseTestClass():    #基底クラス（親クラス，スーパークラ�
         print(self.percentage)
 
 
-class InheritTestClass(BaseTestClass): # 継承クラス（子クラス，サブクラス）
+class InheritTestClass(BaseTestClass):      # 継承クラス（子クラス，サブクラス）
     def __init__(self, int_val, str_val):
         super().__init__(int_val, str_val)  # スーパークラスのinitialiser を呼び忘れないように
         self.__int_member = int_val
         self.__str_val = 'super!'           # これは本クラスの値を変更するだけ
         self.title = 'super title!'         # これは基底クラスの値も変更する
         self.percentage = 20.0
+
+
+class AbstractMyBase(metaclass=ABCMeta):    # 抽象クラス
+    @abstractmethod
+    some_method(self):			            # このメソッドは継承先で実装必須となる。
+        pass
+    
+    not_abstract_method(self):		        # このメソッドは継承先で実装する必要がない。
+        pass				                # 但し、実装すると基クラスのメソッドがオーバーライドされる
+
 
 
 sp_cls = InheritTestClass(36, "hoge")
