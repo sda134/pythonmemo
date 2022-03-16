@@ -12,6 +12,8 @@ print('datetime: %s' % repr( datetime.now()))
 # 文字列への変換
 print("%s" % (datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
 
+# 文字列からの変換
+dt_from_str = datetime.datetime.strptime('1999-12-31 00:00:00', '%Y/%m/%d %H:%M:%S')
 
 # イニシャライザ
 custom_dt = datetime.datetime(2022, 1, 23, hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
