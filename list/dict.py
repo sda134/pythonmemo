@@ -5,11 +5,11 @@
 
 # dict 型の基本　※注目すべきは型の異なるメンバを含む事ができる点
 my_dict = {'key1': 10, 'key2': 'foo'}
-my_dict['key3'] = 'o1'                # キーを追加（通常は値を代入）
-print(my_dict['key3'])                # キー　で値にアクセスする
+my_dict['key3'] = 'o1'                      # キーを追加（通常は値を代入）
+print(my_dict['key3'])                      # キー　で値にアクセスする
 
-other_dict = {'key1': 4.0, 'key4': 4.0} # 
-my_dict.update(other_dict)              # update 複合的なdict の更新
+other_dict = {'key1': 4.0, 'key4': 4.0}     # 
+my_dict.update(other_dict)                  # update キーが存在する場合は更新、存在しない場合は追加
 print('\n' + '-' * 30)
 
 
