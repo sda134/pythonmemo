@@ -14,7 +14,7 @@ list_sample = [1, 2, 3, 4, 5]
 tuple_sample1 = (1, 2, 3, 4, 5)
 tuple_sample1 = 1, 2, 3, 4, 5
 
-tuple_sample1(0)                    # 値の取得
+tuple_sample1[0]                    # 値の取得
 
 # 追加
 tuple_sample2 = tuple_sample1 + (6, 7)

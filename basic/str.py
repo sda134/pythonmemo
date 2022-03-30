@@ -17,6 +17,11 @@ print(hoge)            # rstrip 右（文字列最後）から削除
 print('- ' * 10 + '\n')
 
 
+# None, 空白対応
+maybe_none = None
+must_be_sth = maybe_none or 'なし'          # C# の ?? みたいなにnull確認ができる
+
+
 # 文字列の検索
 
 # 注意！rfindは後ろ側の文字が優先されるだけで，index値はfindと変わらない
