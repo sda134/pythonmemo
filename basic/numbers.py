@@ -3,7 +3,14 @@
 import math
 from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
 
+# 小数を扱う
+default_decimal = 1.234
+print('type of default_decimal:%s' % type(default_decimal)))    # → float となる
+explicit_decimal = Decimal(1.234)                               # 明示的にDecimal を使いたい場合の方法
+
+
 # 整数で丸め
+
 
 # 数値の丸めなど
 print('round\t: %f' % round(1.23456789, ndigits = 2))      # 偶数への丸め
