@@ -19,11 +19,12 @@ tuple_from_dict = tuple(dict_eg.items())
 # 基本中の基本
 items = [1,2]
 
-b_ret = 2 in items      # C# の List.exists() に近い使い方
+b_ret = 2 in items          # C# の List.exists() に近い使い方
+added_items = items + 1     # 各要素に1を加算したlistが作成される
 
-items.append(3)         # append ｃ＃などの.Add()
-items.insert(1, 1.5)    #(index, value) indexは0 から始まる
-items.extend([3,4])     # リストをまるごと追加 C#の .AddRange() のようなもの
+items.append(3)             # append ｃ＃などの.Add()
+items.insert(1, 1.5)        #(index, value) indexは0 から始まる
+items.extend([3,4])         # リストをまるごと追加 C#の .AddRange() のようなもの
 
 print("length of list: %i" % len(items)) #　※注意！ list.count メソッドもあるが、意味が違う(出現回数)
 
