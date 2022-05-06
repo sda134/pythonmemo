@@ -18,6 +18,7 @@ print('ceil\t: %f' % math.ceil(1.23456789))      # 切り上げ
 print('floor\t: %f' % math.floor(1.23456789))    # 切り捨て
 
 #   四捨五入  ※ ROUND_HALF_UP は引数指定しなかった時のデフォルトでもある
+dec_not_recommended = Decimal(1.23456789)       # floatを引数にすると、精度の悪いものを精度良く扱う為、意味が無い。
 dec_val = Decimal('1.23456789')
 print('quantize HALFUP\t: %f' % dec_val.quantize(Decimal("0.0001"), rounding = ROUND_HALF_UP))
 print('quantize 0\t: %f' % dec_val.quantize(Decimal('0')))
