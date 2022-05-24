@@ -63,6 +63,9 @@ for i, v in enumerate(['tic','tac','tor']):
 print('all exponential:%s\n' %\
     [i**2 for i in range(-10,10)])   # 処理を施した新しいリストの作成
 
+# メソッドの実行だけでも良い
+[print('val:%s' % i) for i in range(-10,10)]
+
 
 print('- ' *30)
 
