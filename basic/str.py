@@ -65,6 +65,18 @@ downStr = str.lower(mixedStr) # こんな手もある
 mixedStr_re = mixedStr.replace('a', 'あ')
 print('mixedStr_re %s' % mixedStr_re)
 
+# 数値化
+numeric_text = '1234'
+print(numeric_text.isdecimal()) # True
+
+numeric_text = '①②③④'
+print(numeric_text.isdigit())   # True
+
+numeric_text = '一二三四'
+print(numeric_text.isnumeric()) # True
+
+
+
 
 # 埋め込み   c# の string.format のようなもの
 name = "guest"
