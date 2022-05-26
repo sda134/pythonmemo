@@ -28,9 +28,13 @@ print('==================')
 
 # 2,8,16 int値を進数の文字列への変換
 rawVal = 15
+   yy_str = format(fiscal % 100, '02')
+
 print('bin: %s' % bin(rawVal))
 print('oct: %s' % oct(rawVal))
 print('hex: %s' % hex(rawVal))
+print('format: %s' % format(rawVal,'04'))       # 0n でn桁の文字列になる
+print('format: %s' % (str(rawVal)).zfill(4))    # 上行と同じ結果になる
 print('format b: %s' % format(rawVal,'b'))
 print('format o: %s' % format(rawVal,'4o'))
 print('format x: %s' % format(rawVal,'08x'))
