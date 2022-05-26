@@ -6,10 +6,16 @@
 # 文字列操作：基本
 word ='pyt' 'hon' # +なしでも連結可能（ただし初期化時のみ）
 print("does't") # シングル、ダブルクォートの使い分け
-print('slice1: word[0:2]%s' % word[0:2])    # スライシング（切り取り）
+print('slice1: word[0:2]%s' % word[0:2])    # スライシング（切り取り）[開始位置:終了位置]
 print('slice2: word[:2] %s' % word[:2])     # 開始位置は含み、終了位置は含まない
 print('slice3: word[2:] %s' % word[2:])     #
 print('len：文字列長さ%s' % len(word))
+
+# 後ろから1文字ずつ表示する例
+for s in reversed(range(1, len(word) + 1)):
+    letter = word[s-1:s]
+    print(letter)
+
 
 # 空白、文字列の削除
 hoge = word.strip('p') # lstrip 左（文字列先頭）から削除
