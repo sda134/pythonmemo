@@ -13,9 +13,10 @@ explicit_decimal = Decimal(1.234)                               # 明示的にDe
 
 
 # 数値の丸めなど
-print('round\t: %f' % round(1.23456789, ndigits = 2))      # 偶数への丸め
-print('ceil\t: %f' % math.ceil(1.23456789))      # 切り上げ
-print('floor\t: %f' % math.floor(1.23456789))    # 切り捨て
+print('round\t: %f' % round(1.23456789, ndigits = 2))       # 偶数への丸め
+print('ceil\t: %f' % math.ceil(1.23456789))                 # 切り上げ
+print('floor\t: %f' % math.floor(1.23456789))               # 切り捨て
+print('//\t: %f' % (1//3))                                   # 切り捨て
 
 #   四捨五入  ※ ROUND_HALF_UP は引数指定しなかった時のデフォルトでもある
 dec_not_recommended = Decimal(1.23456789)       # floatを引数にすると、精度の悪いものを精度良く扱う為、意味が無い。
