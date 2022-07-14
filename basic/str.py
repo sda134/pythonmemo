@@ -56,10 +56,17 @@ count = len(list_test)     # 要素数
 print(','.join(list_test)) # 結合
 print('- ' * 10)
 
-
 mixedStr = "abCDe"
 upStr = mixedStr.upper()      # 全てを大文字へ
 downStr = str.lower(mixedStr) # こんな手もある
+
+# 複合的な置き換え translate
+price_str="￥1,234"
+table = {
+    '￥': '',
+    ',': ''}
+price = int(price_str.translate(table))
+
 
 # 文字列置き換え replace
 mixedStr_re = mixedStr.replace('a', 'あ')

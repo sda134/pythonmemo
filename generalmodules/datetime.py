@@ -9,6 +9,11 @@ print(datetime)
 print("hour: %s, msec: %s" % (datetime.datetime.now().hour, datetime.datetime.now().microsecond))           
 print('datetime: %s' % repr( datetime.now()))
 
+# 今日　の取得方法
+today = datetime.date.today()
+today = datetime.datetime.today()
+
+
 # 文字列への変換
 print("%s" % (datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
 

@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 
 import math
 from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
@@ -29,7 +29,6 @@ print('==================')
 
 # 2,8,16 int値を進数の文字列への変換
 rawVal = 15
-   yy_str = format(fiscal % 100, '02')
 
 print('bin: %s' % bin(rawVal))
 print('oct: %s' % oct(rawVal))

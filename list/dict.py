@@ -15,6 +15,10 @@ print('\n' + '-' * 30)
 
 
 # 基本メソッド類
+key2 = my_dict.pop('key2')
+#del key2['key2'] でも同様。del key2['key1'] del key2['key2'] と複数要素を削除できる。
+
+
 print('key5 not in mydict:%s' % ('key5' not in my_dict))        # key in dict / key not in dict
 print('foo in mydict.values():%s' % ('foo' in my_dict.values()))# in values
 
