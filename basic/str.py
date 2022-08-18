@@ -115,6 +115,7 @@ re_text = "123abc456def789"
 print('re.search:%s\n' %\
     re.search(r"[a-z]+", re_text))
 
+
 # 終了
 ret =input('何かキーを押してください')
 
