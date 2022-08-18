@@ -52,8 +52,9 @@ print('- ' * 10)                     # 同じ文字列パターンを繰り返�
 
 # str クラスの各メソッド
 list_test = "1,2,3,4,5".split(",")
-count = len(list_test)     # 要素数
-print(','.join(list_test)) # 結合
+count = len(list_test)                  # 要素数
+print(','.join(list_test))              # 結合
+print(','.join(map(str, list_test)))    # 中身が文字列でない場合（sequence item 0: expected str instanceのエラー対策）
 print('- ' * 10)
 
 mixedStr = "abCDe"
