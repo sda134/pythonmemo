@@ -61,6 +61,7 @@ print('help　')
 print('hex　')
 print('id　')
 print('input　')
+
 print('int　文字列を数値型に変換'+ ' -' *10)
 print(f'int("65535"):\t{int("65535")}\n')
 
@@ -74,7 +75,9 @@ print('map　')
 print('max　')
 print('memoryview　')
 print('min　')
-print('next　')
+
+print('next iteratorの次の要素を返す')
+
 print('object　')
 print('oct　')
 print('open　ファイルを開く'+ ' -' *10)
