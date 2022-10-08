@@ -34,3 +34,7 @@ shutil.copy('./files.py', './copied/files_copied.py')
 
 # ディレクトリごとコピー
 copy_tree('./copied','./copied_duplicated')
+
+# ディレクトリ削除
+os.rmdir('./copied')        # 中身が空でないと削除できない
+shutil.rmtree(target_dir)   # 中のファイル、ディレクトリを削除
