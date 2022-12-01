@@ -51,7 +51,7 @@ print('- ' *30)
 
 
 # index 付きlist (dict?) enumerate　※最後の: を忘れないように
-for i, v in enumerate(['tic','tac','tor']):
+for i, v in enumerate(['tic','tac','tor'], start=1):
     print(i,v)
 
 
