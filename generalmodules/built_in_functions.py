@@ -33,7 +33,11 @@ print('delattr　'+ ' -' *10 +'\n')
 print('dict　辞書型を返します'+ ' -' *10)
 print('dict(one=1, two=2, three=3)\t%s\n' % (dict(one=1, two=2, three=3)))
 
+
+# dir: 指定モジュールのメンバのリストを返す。引数が空の場合はローカルメンバのリストを返す。
+# 補足：__dir__() メソッドの結果を返す
 print('dir　モジュール・パッケージ内の定義内容を調べる')
+print(dir(os))
 print('dir(math):\t%s\n' % (dir(math)))
 
 
@@ -57,7 +61,11 @@ print('getattr　')
 print('globals　')
 print('hasattr　')
 print('hash　')
+
+# help: ヘルプの表示
+print(help(os.getcwd))
 print('help　')
+
 print('hex　')
 print('id　')
 print('input　')
@@ -113,6 +121,7 @@ print('str　')
 print('sum　')
 print('super　')
 print('tuple　')
+
 
 
 print('type　オブジェクトの型を返す')   # class の場合は <class 'class_name'> となる
