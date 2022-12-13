@@ -14,7 +14,8 @@ for ival in my_filter:
 # list に変換する方法
 list_from_filter = list(my_filter)
 
-
+# 拡張子でファイルを抽出する例
+img_file_list = filter(lambda arg: re.search('.png$|.jpeg$|.jpg$'), arg), files_list)
 
 # 補足：比較
 # map() は各要素に処理を行う
