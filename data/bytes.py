@@ -11,6 +11,10 @@ byte_array_str2 = bytearray("あいうえお".encode())  # 方法3 ASCII 文字�
 snd_data = "hello world".encode()
 #snd_data = bytearray("あいうえお".encode())
 
+# 文字コードを指定しつつ16進数の文字列に変換する例
+aiueo = "あいうえお".encode('utf-8', 'replace').hex()
+
+
 import binascii
 hexStr = str(binascii.hexlify(byte_array1), 'utf-8') # 文字列に変換する
 print(hexStr)              #
