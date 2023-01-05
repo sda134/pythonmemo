@@ -5,11 +5,9 @@
 
 byte_array1 = b'\x02\x1f\xa0'                       # 単純にバイト配列を作成する
 byte_array_str1 = b"zbc"                            # 文字列からバイト配列を作成　方法1
-byte_array_str2 = "hello world".encode()            # 方法2
-byte_array_str2 = bytearray("あいうえお".encode())  # 方法3 ASCII 文字以外
+byte_array_str2 = "test文字列".encode('utf-8')      # 文字列からバイト配列を作成　方法2
+bytearray_str = bytearray("あいうえお".encode())    # bytearray(mutable:変更可能)
 
-snd_data = "hello world".encode()
-#snd_data = bytearray("あいうえお".encode())
 
 # 文字コードを指定しつつ16進数の文字列に変換する例
 aiueo = "あいうえお".encode('utf-8', 'replace').hex()
