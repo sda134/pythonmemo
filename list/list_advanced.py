@@ -11,6 +11,7 @@ sharp_list = [28, 31, 27, 30, 26, 29, 25 ]
 new_list = [add7(i) for i in sharp_list]   # この [] は必要。ないと実行エラー。
 
 # 条件付きリストの作成　python の三項演算子
+# なお、elseなしでも問題はない
 odd_even = ['odd' if i % 2 == 1 else 'even' for i in range(10)]
 
 # 一方は変数、一方はlist として宣言する
