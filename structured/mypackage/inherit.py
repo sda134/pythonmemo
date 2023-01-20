@@ -30,6 +30,12 @@ class InheritTestClass(BaseTestClass):      # 継承クラス（子クラス，�
         self.title = 'super title!'         # これは基底クラスの値も変更する
         self.percentage = 20.0
 
+    # def __init__(self, inherited_obj):    # こうゆう事もできる
+    #     super().__init__(
+    #         inherited_obj.int_val,
+    #         inherited_obj.str_val
+    #     )
+
 
 class AbstractMyBase(metaclass=ABCMeta):    # 抽象クラス
     @abstractmethod
