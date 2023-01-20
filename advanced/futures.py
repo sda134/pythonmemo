@@ -2,8 +2,8 @@
 
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
-# ProcessPoolExecutor   大きめの処理
-# ThreadPoolExecutor    小さめの処理
+# ProcessPoolExecutor   マルチスレッド  大きめの処理
+# ThreadPoolExecutor    マルチプロセス  小さめの処理    CPU1つの場合は意味がない？
 
 values = [100,200,300]
 
