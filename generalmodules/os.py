@@ -15,3 +15,7 @@ print('path.join:\t%s' % os.path.join('C\\:', 'usr', 'src'))    # join  ：path 
 
 for dir, subdir, files in os.walk(os.path.dirname(__file__)):   # walk : 特定ディレクトリ内のディレクトリやファイルを返す
     print(dir)
+
+# 対象ディレクトリがなければ作成する例
+if not os.path.exists(img_dir):
+    os.mkdir(img_dir)
