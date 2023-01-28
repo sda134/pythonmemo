@@ -14,6 +14,7 @@ print('current work directory[cwd]:%s' % os.path.dirname(os.getcwd()))
 
 # ファイル名のリストを取得
 file_list =glob.glob("./*")
+os.listdir(./)                  # os を使った方法
 
 for fn in file_list:
     path, ext = os.path.splitext(fn) # 拡張子とファイル名に分離
