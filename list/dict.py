@@ -5,6 +5,12 @@
 
 # flatな dict 型　※注目すべきは型の異なるメンバを含む事ができる点
 my_dict = {'key1': 10, 'key2': 'foo'}
+
+# dict 型で index 付きのループを作成する
+for index, (key, value) in enumerate(my_dict.items()):
+    print(f"index: {index}, key: {key}, value: {value}")
+    
+    
 # dict のlist
 list_person = [
     { 'name':'Taro', 'height':170, 'weight':60 },
