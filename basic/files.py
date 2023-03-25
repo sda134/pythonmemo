@@ -9,7 +9,8 @@ from distutils.dir_util import copy_tree
 
 # current_directory = os.path.dirname(__file__)   # 現在のフォルダパス　※これはpackage を作る時によく使う
 
-print('__file__:\t\t%s' % os.path.dirname(__file__))
+print('dirname of __file__:\t\t%s' % os.path.dirname(__file__))
+print('basename of __file__:\t\t%s' % basename =  os.path.basename(__file__))
 print('current work directory[cwd]:%s' % os.path.dirname(os.getcwd()))
 
 # ファイル名のリストを取得
