@@ -6,10 +6,16 @@
 # flatな dict 型　※注目すべきは型の異なるメンバを含む事ができる点
 my_dict = {'key1': 10, 'key2': 'foo'}
 
+# key と values に同時アクセス
+for key, value in my_dict.items(): 
+    print('key:%s\tvalue:%s' % (key, value))
+
 # dict 型で index 付きのループを作成する
 for index, (key, value) in enumerate(my_dict.items()):
     print(f"index: {index}, key: {key}, value: {value}")
-    
+
+print('\n' + '-' * 30)
+
     
 # dict のlist
 list_person = [
@@ -30,9 +36,6 @@ print('\n' + '-' * 30)
 
 print('key5 not in mydict:%s' % ('key5' not in my_dict))        # key in dict / key not in dict
 print('foo in mydict.values():%s' % ('foo' in my_dict.values()))# in values
-
-for key, value in my_dict.items():                             # key と values に同時アクセス
-    print('key:%s\tvalue:%s' % (key, value))
 
 print('\n' + '-' * 30)
 
