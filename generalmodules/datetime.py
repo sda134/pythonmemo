@@ -29,6 +29,7 @@ custom_dt = datetime.datetime(2022, 1, 23, hour=0, minute=0, second=0, microseco
 
 
 # 日時計算
+# https://docs.python.org/ja/3/library/datetime.html#timedelta-objects
 tomorrow = datetime.date.today() + datetime.timedelta(days=1)
 yesterday = datetime.date.today() - datetime.timedelta(days=1)
 last_month = datetime.date.today() - relativedelta(months=1)
