@@ -40,3 +40,8 @@ copy_tree('./copied','./copied_duplicated')
 # ディレクトリ削除
 os.rmdir('./copied')        # 中身が空でないと削除できない
 shutil.rmtree(target_dir)   # 中のファイル、ディレクトリを削除
+
+# ファイル検索
+#・os.listdir()
+#・os.scandir()
+#・glob.glob()
