@@ -8,7 +8,8 @@ list_of_all_two = [2 for i in range(5)]    # これは itertools の repeat() �
 # それぞれに同じような加工を施す
 add7 = lambda n: n + 7
 sharp_list = [28, 31, 27, 30, 26, 29, 25 ]
-new_list = [add7(i) for i in sharp_list]   # この [] は必要。ないと実行エラー。
+new_list = [add7(i) for i in sharp_list]      # この [] は必要。ないと実行エラー。
+new_list = list(map(add7, sharp_list))        # これでも同じ効果が得られる
 
 # 条件付きリストの作成　python の三項演算子
 # なお、elseなしでも問題はない
