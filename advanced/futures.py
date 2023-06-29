@@ -16,7 +16,7 @@ def task2(str_val:str):
 # 単純に１つの処理を行う
 with ThreadPoolExecutor(max_workers=2, thread_name_prefix="thread") as executor:
     executor.submit(task, 100)          # メソッドを渡さないといけない点に注意
-    executor.submit(task2, 'fuga')      # task() とすると実行結果を渡す事になってしまう
+    executor.submit(task2, 'fuga')      # task() とすると実行結果を渡す事になってしまう と思う
 
 
 # １つのメソッドに複数の値をあたえて、そのすべてを実行する

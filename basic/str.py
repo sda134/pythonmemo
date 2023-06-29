@@ -62,11 +62,19 @@ upStr = mixedStr.upper()      # 全てを大文字へ
 downStr = str.lower(mixedStr) # こんな手もある
 
 # 複合的な置き換え translate
+#　"a", "e", "i", "o", "u"がそれぞれ"1", "2", "3", "4", "5"に置き換えられています。
+translate_table = str.maketrans("aeiou", "12345")
+text = "Hello World"
+new_text = text.translate(translate_table)
+print(new_text)
+
 price_str="￥1,234"
 table = {
     '￥': '',
     ',': ''}
 price = int(price_str.translate(table))
+
+
 
 
 # 文字列置き換え replace

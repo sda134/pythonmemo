@@ -7,15 +7,15 @@
 """
 doctext
 クラスの説明をここに書く
-参考資料：https://docs.python.org/ja/3.6/reference/datamodel.html#index-34
+参考資料：https://docs.python.org/ja/dev/reference/datamodel.html#index-34
 """
 
-class TestClass():                  # クラス名は camel case とする
-    def __init__(self, arg1=0):     # コンストラクタ ※デフォルト値を持っているのでオーバーロードのように扱える
-        print('initialiser invoked!') # __init__ だからか、pythonでは initializer と呼ぶ
-        self._value = 1             # これでもメンバが生成される non public ≒ private
-        self.field = "PublicField"  # これでもメンバが生成される public
-                                    # 基本的には init のオーバーロードは不可。継承などで対応する。
+class TestClass():                      # クラス名は camel case とする
+    def __init__(self, arg1=0):         # コンストラクタ ※デフォルト値を持っているのでオーバーロードのように扱える
+        print('initialiser invoked!')   # __init__ だからか、pythonでは initializer と呼ぶ
+        self._value = 1                 # これでもメンバが生成される non public ≒ private
+        self.field = "PublicField"      # これでもメンバが生成される public
+                                        # 基本的には init のオーバーロードは不可。継承などで対応する。
 
     def __del__(self):              #デストラクタ
         print('destructor invoked!')

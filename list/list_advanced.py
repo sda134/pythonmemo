@@ -1,5 +1,18 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 #coding: UTF-8
+
+from typing import Dict
+
+list_dict:Dict[int, list]={1:[], 2:[]}
+int_list=[1,2,3,4,5]
+
+for item in list_dict:
+    if item in list_dict:
+        list_dict[item].append(item)
+    else:
+        list_dict[item]=[item]
+
+
 
 # 同じ値の要素を複数作成する
 list_of_all_two = [2 for i in range(5)]    # これは itertools の repeat() でも同じ事ができる
