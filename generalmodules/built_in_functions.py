@@ -111,8 +111,11 @@ print('reversed　逆順イテレータを返す')
 print('list(reversed(range(3, 10, 2))):\t%s' % list(reversed(range(3, 10, 2))))
 print('compare: list(range(10, 3, -2)):\t%s\n' % list(range(10, 3, -2)))
 
-print('round　')
-print('set　')
+print('round')
+
+print('set 集合型を提供する')                    # 要素を追加したり削除したりできるミュータブルな型、特に集合演算が便利
+print('set([1,2,3]):\t%s\n' % set([1,2,3]))     # {1, 2, 3} となる。    s = {1, 2, 3} としてtype(s) とするとsetと返る
+
 print('setattr　')
 print('slice　')
 print('sorted　')
