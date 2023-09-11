@@ -13,9 +13,15 @@ print('dirname of __file__:\t\t%s' % os.path.dirname(__file__))
 print('basename of __file__:\t\t%s' % basename =  os.path.basename(__file__))
 print('current work directory[cwd]:%s' % os.path.dirname(os.getcwd()))
 
-# ファイル名のリストを取得
+# ファイル名のリストを取得 - glob
 file_list =glob.glob("./*")
-os.listdir(./)                  # os を使った方法
+
+# ファイル名のリストを取得 - os.listdir
+os.listdir(./)                  
+# ディレクトリのみ抽出　補足：os.path.isfileメソッドもある
+dir_list = [ f for f in os.listdir(detect_dir_path) 
+    if os.path.isdir(os.path.join(detect_dir_path, f))]
+
 
 for fn in file_list:
     path, ext = os.path.splitext(fn) # 拡張子とファイル名に分離
