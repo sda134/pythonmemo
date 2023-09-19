@@ -19,7 +19,7 @@ print("%s" % (datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
 # https://docs.python.org/ja/3/library/datetime.html
 
 # 文字列からの変換
-dt_from_str = datetime.datetime.strptime('1999-12-31 00:00:00', '%Y-%m-%d %H:%M:%S.%fff')
+dt_from_str = datetime.datetime.strptime('1999-12-31 00:00:00.000', '%Y-%m-%d %H:%M:%S.%fff')
 
 # date型への変換（datetime.dateにstrptimeメソッドは無い点に注意）
 date_from_str = datetime.datetime.strptime('1999-12-31', '%Y-%m-%d').date()
