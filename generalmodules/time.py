@@ -17,7 +17,17 @@ print('time.gmtime')        # 協定世界時 で表示
 for i in range(5):
     print(time.gmtime())
 
+
 print('time.perf_counter')
-start = time.perf_counter()                 # 時間を測る
-time.sleep(1)                               # 重い処理があるとする
+start_time = time.perf_counter()            # 時間を測り始める
+
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    pass
+
+end_time = time.perf_counter()
 duration = time.perf_counter() - start      # 終了時間 - 開始時間でかかった時間を計測
+
+print(f"時間: {duration: .5f} 秒")
