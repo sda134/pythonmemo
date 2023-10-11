@@ -19,15 +19,18 @@ for i in range(5):
 
 
 print('time.perf_counter')
-start_time = time.perf_counter()            # 時間を測り始める
+# 時間を測るデコレータ関数
+def method_timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.perf_counter()                # 時間を測り始める
+        result = func(*args, **kwargs)
+        duration = time.perf_counter() - start_time      # 終了時間 - 開始時間でかかった時間を計測
+        print(f"func:{func.__name__}\ttime: {duration: .5f} sec")
+        return result
+    return wrapper
 
-try:
-    while True:
-        pass
-except KeyboardInterrupt:
-    pass
+@method_timer
+def some_heavy_task():
+    time.sleep(5)
 
-end_time = time.perf_counter()
-duration = time.perf_counter() - start      # 終了時間 - 開始時間でかかった時間を計測
-
-print(f"時間: {duration: .5f} 秒")
+some_heavy_task()
