@@ -21,6 +21,18 @@ right_shifted = 0b1010 >> 1
 print('右シフト:' + bin(right_shifted))
 
 
+# 特定のビットを1に設定する（ビットをクリアする）
+def set_bit(byte_val, position):
+    return byte_val | (1 << position)
+
+# 特定のビットを0に設定する（ビットをクリアする）
+def clear_bit(byte_val, position):
+    return byte_val & ~(1 << position)
+
+# 特定のビットの値を反転させる（ビットをトグルする）
+def toggle_bit(byte_val, position):
+    return byte_val ^ (1 << position)
+
 # 数値 -> bit 配列変換
 dummy_value=0x0f
 bit_list= [(dummy_value & (1 << index)) > 0 for index, digit in enumerate(range(8))]

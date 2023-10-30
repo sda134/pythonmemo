@@ -3,11 +3,11 @@
 
 # byte関連
 
-byte_array1 = b'\x02\x1f\xa0'                       # 単純にバイト配列を作成する
-byte_array_str1 = b"zbc"                            # 文字列からバイト配列を作成　方法1
-byte_array_str2 = "test文字列".encode('utf-8')      # 文字列からバイト配列を作成　方法2
+byte_array1 = b'\x02\x1f\xa0'                     # 単純にバイト配列を作成する
+byte_array_str1 = b"zbc"                          # 文字列からバイト配列を作成　方法1
+byte_array_str2 = "test文字列".encode('utf-8')     # 文字列からバイト配列を作成　方法2
 bytearray_str = bytearray("あいうえお".encode())    # bytearray(mutable:変更可能)
-
+bytes_str = bytes(bytearray_str)                  # bytearray -> bytes
 
 # 文字コードを指定しつつ16進数の文字列に変換する例
 aiueo = "あいうえお".encode('utf-8', 'replace').hex()
@@ -22,8 +22,9 @@ print('"zbc:"%s' %  repr(byte_array2))
 # [hex(ord(c)) for c in data]
 
 # byte ⇔ int
-iVal = 21587                                # 指定バイト数（この場合2バイト）
-bytes_from_int = iVal.to_bytes(2,'big')     # を超えると例外発生
+i_val = 21587                                # 指定バイト数（この場合2バイト）
+bytes_from_int = i_val.to_bytes(2,'big')     # を超えると例外発生
+bit_length = i_val.bit_length()              # bit 数を知ることはできる (i_val.bit_length() + 7) // 8 でバイト数に
 print(repr(bytes_from_int))
 print('int value from bytes:%s' % int.from_bytes(bytes_from_int, 'big'))
 
