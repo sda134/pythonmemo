@@ -50,6 +50,8 @@ print('start =1:\t\t%s\n' % repr(list(enumerate(seasons, start=1))))
 
 print('eval　'+ ' -' *10+'\n')
 print('exec　'+ ' -' *10+'\n')
+# 補足：インジェクション攻撃のリスクになりうるので eval, exec の使用は非推奨
+
 print('filter　'+ ' -' *10+'\n')
 
 print('float　文字列を浮動小数点数型に変換'+ ' -' *10)
