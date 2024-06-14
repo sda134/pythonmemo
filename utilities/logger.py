@@ -89,20 +89,6 @@ formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)-8s %(module)-18
 file_handler.setFormatter(formatter)
 
 
-# loggerに適用：反対はLogger.removeHandler() 
-logger.addHandler(file_handler)
-#logger.addHandler(smtp_handler)    # メール送信されてしまうのでコメントアウト
-
-
-
-# 記録メソッド５つ。
-# ただのカテゴリ分けではあるが、一般に下に行くほど深刻で重要度が高い。
-# filename の設定が無ければ Console に出力される
-logger.debug('debug message')       # level = 10
-logger.info('info message')         # level = 20
-logger.warning('warn message')      # level = 30
-logger.error('error message')       # level = 40
-logger.critical('critical message') # level = 50
 
 
 '''
