@@ -10,6 +10,7 @@ print(f'abs(-1):\t{abs(-1)}\n')
 
 print('all　'+ ' -' *10+'\n')
 print('any　'+ ' -' *10+'\n')
+if any(len(item) > 2 for item in my_list)
 print('ascii　'+ ' -' *10+'\n')
 print('bin　'+ ' -' *10+'\n')
 print('bool　'+ ' -' *10+'\n')
@@ -52,12 +53,14 @@ print('eval　'+ ' -' *10+'\n')
 print('exec　'+ ' -' *10+'\n')
 # 補足：インジェクション攻撃のリスクになりうるので eval, exec の使用は非推奨
 
-print('filter　'+ ' -' *10+'\n')
+print('filter '+ ' -' *10+'\n')
+    my_filter = filter(lambda x: len(x) > 1, my_list)
+    my_new_list = list(my_filter)
 
 print('float　文字列を浮動小数点数型に変換'+ ' -' *10)
 print(f'float("1.1"):\t{float("1.1")}\n')
 
-print('format　')
+print('format ')
 print('frozenset　')
 print('getattr　')
 print('globals　')
@@ -81,12 +84,13 @@ print('iter　')
 print('len　')
 print('list　')
 print('locals　')
-print('map　')
-print('max　')
-print('memoryview　')
-print('min　')
+print('map ')
+print('max ')
+print('memoryview ')
+print('min ')
 
-print('next iteratorの次の要素を返す')
+print('next: iteratorの次の要素を返す。ない場合はNoneを返す')
+
 
 print('object　')
 print('oct　')
