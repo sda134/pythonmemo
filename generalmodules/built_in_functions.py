@@ -61,7 +61,14 @@ print('float　文字列を浮動小数点数型に変換'+ ' -' *10)
 print(f'float("1.1"):\t{float("1.1")}\n')
 
 print('format ')
+
 print('frozenset　')
+# イミュータブルな "set" を生成する（コピー、検索、集合計算を高速に行う）
+# list[dict] の差分を生成する例
+new_set = frozenset(d.items() for d in new_list)
+old_set = frozenset(d.items() for d in old_list)
+diff_set = new_set - old_set
+
 print('getattr　')
 print('globals　')
 print('hasattr　')
