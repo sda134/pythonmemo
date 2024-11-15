@@ -96,8 +96,10 @@ print('max ')
 print('memoryview ')
 print('min ')
 
-print('next: iteratorの次の要素を返す。ない場合はNoneを返す')
-
+print('next: iteratorの次の要素を返す。')
+# next の第二引数が無いと、該当しない時
+matched_filter = filter(lambda x: len(x) > 3, my_list)
+ret = next(matched_filter, None)
 
 print('object　')
 print('oct　')
@@ -150,5 +152,4 @@ names = ['taro', 'hanako', 'jiro']
 ages = [25, 30]
 for name, age in zip(names, ages):              #
     print('name:%s    age:%s' % (name, age))    # jiro がプリントされない事に注目
-
 
