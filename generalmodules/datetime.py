@@ -36,6 +36,12 @@ yesterday = datetime.date.today() - datetime.timedelta(days=1)
 last_month = datetime.date.today() - relativedelta(months=1)
 print("tomorrow: %s, yesterday: %s" % (tomorrow, yesterday))             
 
+# タイムゾーン
+utc = datetime.timezone.utc
+jst = timezone(timedelta(hours=9))
+jst = ZoneInfo("Asia/Tokyo")
+utc_dt = datetime.datetime.now(datetime.timezone.utc)
+jst_dt = utc_dt.astimezone(jst)
 
 # 終了
 ret =input('何かキーを押してください')
